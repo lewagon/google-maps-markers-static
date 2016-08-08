@@ -28,6 +28,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/js-marker-clusterer/1.0.0/markerclusterer_compiled.js"></script>
+    <script src="https://cdn.rawgit.com/printercu/google-maps-utility-library-v3-read-only/master/infobox/src/infobox_packed.js"></script>
     <script src="https://raw.githubusercontent.com/apneadiving/Google-Maps-for-Rails/master/js_compilation/gmaps_google.js"></script>
 
     <script type="text/javascript">
@@ -35,22 +36,82 @@
         var handler = Gmaps.build('Google', { markers: { clusterer: undefined }});
         handler.buildMap({ internal: { id: 'map' } }, function(){
           markers = handler.addMarkers([
-              { "lat": 43.3027392,  "lng": 5.3765816  }, // Aix - Marseille
-              { "lat": 52.3431438,  "lng": 4.8291689  }, // Amsterdam
-              { "lat": 33.893791,  "lng": 35.5017767  }, // Beirut
-              { "lat": -19.915620, "lng": -43.9345931 }, // Belo Horizonte
-              { "lat": 44.841870,  "lng": -0.5706669  }, // Bordeaux
-              { "lat": 50.847443,  "lng": 4.3591849   }, // Brussels
-              { "lat": 55.699662,  "lng": 12.532918   }, // Copenhagen
-              { "lat": 50.6333542, "lng": 3.0203766   }, // Lille
-              { "lat": 38.7324346, "lng": -9.1423852  }, // Lisbon
-              { "lat": 51.5213244, "lng": -0.0766771  }, // London
-              { "lat": 45.764043,  "lng": 4.835659    }, // Lyon
-              { "lat": 47.218371,  "lng": -1.553621   }, // Nantes
-              { "lat": 48.8648482, "lng": 2.3798534   }, // Paris
-              { "lat": -22.97754,  "lng": -43.234288  }, // Rio de Janeiro
-              { "lat": -23.559172, "lng": -46.6801402 }  // São Paulo
-            ]);
+            {
+              "lat": 43.3027392,
+              "lng": 5.3765816,
+              "infowindow": "<h1>Aix - Marseille</h1><p><img src='https://d1gofzrmx0fcbg.cloudfront.net/production/cities/city_pictures/000/000/008/thumbnail/marseille.jpg?1445520529' height='200'></p>"
+            },
+            {
+              "lat": 52.3431438,
+              "lng": 4.8291689,
+              "infowindow": "<h1>Amsterdam</h1><p><img src='https://d1gofzrmx0fcbg.cloudfront.net/production/cities/city_pictures/000/000/011/thumbnail/amsterdam.jpg?1453219893' height='200'></p>"
+            },
+            {
+              "lat": 33.8937913,
+              "lng": 35.5017767,
+              "infowindow": "<h1>Beirut</h1><p><img src='https://d1gofzrmx0fcbg.cloudfront.net/production/cities/city_pictures/000/000/004/thumbnail/beirut.jpg?1445520746' height='200'></p>"
+            },
+            {
+              "lat": -19.9156207,
+              "lng": -43.9345931,
+              "infowindow": "<h1>Belo Horizonte</h1><p><img src='https://d1gofzrmx0fcbg.cloudfront.net/production/cities/city_pictures/000/000/018/thumbnail/BH.jpg?1467361247' height='200'></p>"
+            },
+            {
+              "lat": 44.8418706,
+              "lng": -0.5706669,
+              "infowindow": "<h1>Bordeaux</h1><p><img src='https://d1gofzrmx0fcbg.cloudfront.net/production/cities/city_pictures/000/000/005/thumbnail/bordeaux.jpg?1445962618' height='200'></p>"
+            },
+            {
+              "lat": 50.8474433,
+              "lng": 4.3591849,
+              "infowindow": "<h1>Brussels</h1><p><img src='https://d1gofzrmx0fcbg.cloudfront.net/production/cities/city_pictures/000/000/002/thumbnail/brussels.jpg?1445520592' height='200'></p>"
+            },
+            {
+              "lat": 55.699662,
+              "lng": 12.532918,
+              "infowindow": "<h1>Copenhagen</h1><p><img src='https://d1gofzrmx0fcbg.cloudfront.net/production/cities/city_pictures/000/000/013/thumbnail/k%C3%B8benhavn-bg.jpg?1454509826' height='200'></p>"
+            },
+            {
+              "lat": 50.6333542,
+              "lng": 3.0203766,
+              "infowindow": "<h1>Lille</h1><p><img src='https://d1gofzrmx0fcbg.cloudfront.net/production/cities/city_pictures/000/000/003/thumbnail/lille.jpg?1445520692' height='200'></p>"
+            },
+            {
+              "lat": 38.7324346,
+              "lng": -9.1423852,
+              "infowindow": "<h1>Lisbon</h1><p><img src='https://d1gofzrmx0fcbg.cloudfront.net/production/cities/city_pictures/000/000/009/thumbnail/8130866554_0faf8af6e6_k.jpg?1447424100' height='200'></p>"
+            },
+            {
+              "lat": 51.5213244,
+              "lng": -0.0766771,
+              "infowindow": "<h1>London</h1><p><img src='https://d1gofzrmx0fcbg.cloudfront.net/production/cities/city_pictures/000/000/014/thumbnail/2722715933_ed5a01fa23_o.jpg?1457434940' height='200'></p>"
+            },
+            {
+              "lat": 45.764043,
+              "lng": 4.835659,
+              "infowindow": "<h1>Lyon</h1><p><img src='https://d1gofzrmx0fcbg.cloudfront.net/production/cities/city_pictures/000/000/016/thumbnail/1024px-Lyon_basilique_de_fourvie%CC%80re.jpg?1463049986' height='200'></p>"
+            },
+            {
+              "lat": 47.218371,
+              "lng": -1.553621,
+              "infowindow": "<h1>Nantes</h1><p><img src='https://d1gofzrmx0fcbg.cloudfront.net/production/cities/city_pictures/000/000/012/thumbnail/nantes.jpg?1453388206' height='200'></p>"
+            },
+            {
+              "lat": 48.8648482,
+              "lng": 2.3798534,
+              "infowindow": "<h1>Paris</h1><p><img src='https://d1gofzrmx0fcbg.cloudfront.net/production/cities/city_pictures/000/000/001/thumbnail/15079403417_371f698d27_k.jpg?1445521241' height='200'></p>"
+            },
+            {
+              "lat": -22.97754,
+              "lng": -43.234288,
+              "infowindow": "<h1>Rio de Janeiro</h1><p><img src='https://d1gofzrmx0fcbg.cloudfront.net/production/cities/city_pictures/000/000/019/thumbnail/rio_1.jpg?1469439835' height='200'></p>"
+            },
+            {
+              "lat": -23.5591728,
+              "lng": -46.6801402,
+              "infowindow": "<h1>São Paulo</h1><p><img src='https://d1gofzrmx0fcbg.cloudfront.net/production/cities/city_pictures/000/000/015/thumbnail/12280389883_aecfecfc0e_h.jpg?1458582747' height='200'></p>"
+            }
+          ]);
           handler.bounds.extendWith(markers);
           handler.fitMapToBounds();
         });
@@ -58,3 +119,24 @@
     </script>
   </body>
 </html>
+
+<!--
+
+Ruby script which generated the markers from lewagon/alumni repo:
+
+require "json"
+
+markers = []
+City.order(:name).each do |city|
+  if city.latitude && city.longitude
+    markers << {
+      lat: city.latitude,
+      lng: city.longitude,
+      infowindow: "<h1>#{city.name}</h1><p><img src='#{city.city_picture.url(:thumbnail)}' height='200'></p>"
+    }
+  end
+end
+
+puts JSON.pretty_generate(markers)
+
+-->
