@@ -25,97 +25,136 @@
     <script src="https://maps.google.com/maps/api/js?key=AIzaSyDANjx3bosEtIyzJaoWs50Wnt6nt_1rmxU"></script>
 
     <!-- Include Dependencies of GMaps for Rails gem -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/js-marker-clusterer/1.0.0/markerclusterer_compiled.js"></script>
     <script src="https://cdn.rawgit.com/printercu/google-maps-utility-library-v3-read-only/master/infobox/src/infobox_packed.js"></script>
     <script src="https://cdn.rawgit.com/apneadiving/Google-Maps-for-Rails/master/js_compilation/gmaps_google.js"></script>
 
     <script type="text/javascript">
-      $(document).on('ready', function() {
-        var handler = Gmaps.build('Google', { markers: { clusterer: undefined }});
-        handler.buildMap({ internal: { id: 'map' } }, function(){
-          markers = handler.addMarkers([
+      var handler = Gmaps.build('Google', { markers: { clusterer: undefined } });
+      handler.buildMap({ internal: { id: 'map' } }, function() {
+        markers = handler.addMarkers(
+          [
             {
-              "lat": 43.3027392,
-              "lng": 5.3765816,
-              "infowindow": "<h1>Aix - Marseille</h1><p><img src='https://d1gofzrmx0fcbg.cloudfront.net/production/cities/city_pictures/000/000/008/thumbnail/marseille.jpg?1445520529' height='200'></p>"
+              "lat": 43.2864759,
+              "lng": 5.3798121,
+              "infowindow": "<h1>Aix - Marseille</h1><p><img src='https://res.cloudinary.com/wagon/image/upload/c_fill,h_200/v1500988849/nqoqw5sinlj1hqvxrfyi.jpg' height='200'></p>"
             },
             {
-              "lat": 52.3431438,
-              "lng": 4.8291689,
-              "infowindow": "<h1>Amsterdam</h1><p><img src='https://d1gofzrmx0fcbg.cloudfront.net/production/cities/city_pictures/000/000/011/thumbnail/amsterdam.jpg?1453219893' height='200'></p>"
+              "lat": 52.3842921,
+              "lng": 4.9034211,
+              "infowindow": "<h1>Amsterdam</h1><p><img src='https://res.cloudinary.com/wagon/image/upload/c_fill,h_200/v1486638030/g82nzg0t7e6m1yhz732t.jpg' height='200'></p>"
             },
             {
-              "lat": 33.8937913,
-              "lng": 35.5017767,
-              "infowindow": "<h1>Beirut</h1><p><img src='https://d1gofzrmx0fcbg.cloudfront.net/production/cities/city_pictures/000/000/004/thumbnail/beirut.jpg?1445520746' height='200'></p>"
+              "lat": -8.6594824,
+              "lng": 115.1301361,
+              "infowindow": "<h1>Bali</h1><p><img src='https://res.cloudinary.com/wagon/image/upload/c_fill,h_200/v1502179279/kwzoabxdjhzdnxhsowrv.jpg' height='200'></p>"
             },
             {
-              "lat": -19.9156207,
-              "lng": -43.9345931,
-              "infowindow": "<h1>Belo Horizonte</h1><p><img src='https://d1gofzrmx0fcbg.cloudfront.net/production/cities/city_pictures/000/000/018/thumbnail/BH.jpg?1467361247' height='200'></p>"
+              "lat": 41.4089506,
+              "lng": 2.1523962,
+              "infowindow": "<h1>Barcelona</h1><p><img src='https://res.cloudinary.com/wagon/image/upload/c_fill,h_200/v1486638050/pzrtafdqbpvpj4rbdbr7.jpg' height='200'></p>"
             },
             {
-              "lat": 44.8418706,
-              "lng": -0.5706669,
-              "infowindow": "<h1>Bordeaux</h1><p><img src='https://d1gofzrmx0fcbg.cloudfront.net/production/cities/city_pictures/000/000/005/thumbnail/bordeaux.jpg?1445962618' height='200'></p>"
+              "lat": -19.9364164,
+              "lng": -43.9274803,
+              "infowindow": "<h1>Belo Horizonte</h1><p><img src='https://res.cloudinary.com/wagon/image/upload/c_fill,h_200/v1486637968/q4wbivhcfxoapyrngzau.jpg' height='200'></p>"
+            },
+            {
+              "lat": 52.5070897,
+              "lng": 13.3914195,
+              "infowindow": "<h1>Berlin</h1><p><img src='https://res.cloudinary.com/wagon/image/upload/c_fill,h_200/v1486638013/bvpm5heyfyuboiwr1yyu.jpg' height='200'></p>"
+            },
+            {
+              "lat": 44.8593472,
+              "lng": -0.5659374,
+              "infowindow": "<h1>Bordeaux</h1><p><img src='https://res.cloudinary.com/wagon/image/upload/c_fill,h_200/v1486637920/m7zxir2pydgk904paos0.jpg' height='200'></p>"
             },
             {
               "lat": 50.8474433,
               "lng": 4.3591849,
-              "infowindow": "<h1>Brussels</h1><p><img src='https://d1gofzrmx0fcbg.cloudfront.net/production/cities/city_pictures/000/000/002/thumbnail/brussels.jpg?1445520592' height='200'></p>"
+              "infowindow": "<h1>Brussels</h1><p><img src='https://res.cloudinary.com/wagon/image/upload/c_fill,h_200/v1486637936/rxvmfggtt0py1dlvt0f5.jpg' height='200'></p>"
             },
             {
-              "lat": 55.699662,
-              "lng": 12.532918,
-              "infowindow": "<h1>Copenhagen</h1><p><img src='https://d1gofzrmx0fcbg.cloudfront.net/production/cities/city_pictures/000/000/013/thumbnail/k%C3%B8benhavn-bg.jpg?1454509826' height='200'></p>"
+              "lat": 47.497912,
+              "lng": 19.040235,
+              "infowindow": "<h1>Budapest</h1><p><img src='https://res.cloudinary.com/wagon/image/upload/c_fill,h_200/v1502823787/uou5zz26w5zedpxkqof9.jpg' height='200'></p>"
             },
             {
-              "lat": 50.6333542,
-              "lng": 3.0203766,
-              "infowindow": "<h1>Lille</h1><p><img src='https://d1gofzrmx0fcbg.cloudfront.net/production/cities/city_pictures/000/000/003/thumbnail/lille.jpg?1445520692' height='200'></p>"
+              "lat": 30.588074,
+              "lng": 104.056553,
+              "infowindow": "<h1>Chengdu</h1><p><img src='https://res.cloudinary.com/wagon/image/upload/c_fill,h_200/v1490575684/gpijvrwhipuabxwup3a8.jpg' height='200'></p>"
+            },
+            {
+              "lat": 55.6916094,
+              "lng": 12.5595712,
+              "infowindow": "<h1>Copenhagen</h1><p><img src='https://res.cloudinary.com/wagon/image/upload/c_fill,h_200/v1486637943/lcruihqntwaqkyrhk6z0.jpg' height='200'></p>"
+            },
+            {
+              "lat": 50.631539,
+              "lng": 3.0154753,
+              "infowindow": "<h1>Lille</h1><p><img src='https://res.cloudinary.com/wagon/image/upload/c_fill,h_200/v1486637988/esmm1z2ewdydy3zfedm0.jpg' height='200'></p>"
             },
             {
               "lat": 38.7324346,
               "lng": -9.1423852,
-              "infowindow": "<h1>Lisbon</h1><p><img src='https://d1gofzrmx0fcbg.cloudfront.net/production/cities/city_pictures/000/000/009/thumbnail/8130866554_0faf8af6e6_k.jpg?1447424100' height='200'></p>"
+              "infowindow": "<h1>Lisbon</h1><p><img src='https://res.cloudinary.com/wagon/image/upload/c_fill,h_200/v1486637979/uijnw5frgpfcjo65ta9x.jpg' height='200'></p>"
             },
             {
               "lat": 51.5213244,
               "lng": -0.0766771,
-              "infowindow": "<h1>London</h1><p><img src='https://d1gofzrmx0fcbg.cloudfront.net/production/cities/city_pictures/000/000/014/thumbnail/2722715933_ed5a01fa23_o.jpg?1457434940' height='200'></p>"
+              "infowindow": "<h1>London</h1><p><img src='https://res.cloudinary.com/wagon/image/upload/c_fill,h_200/v1486638020/flplnrdj7rxwbxvkllrc.png' height='200'></p>"
             },
             {
-              "lat": 45.764043,
-              "lng": 4.835659,
-              "infowindow": "<h1>Lyon</h1><p><img src='https://d1gofzrmx0fcbg.cloudfront.net/production/cities/city_pictures/000/000/016/thumbnail/1024px-Lyon_basilique_de_fourvie%CC%80re.jpg?1463049986' height='200'></p>"
+              "lat": 45.7395888,
+              "lng": 4.8186717,
+              "infowindow": "<h1>Lyon</h1><p><img src='https://res.cloudinary.com/wagon/image/upload/c_fill,h_200/v1486638002/sfl1c9nqlfhbxkdspchx.jpg' height='200'></p>"
             },
             {
-              "lat": 47.218371,
-              "lng": -1.553621,
-              "infowindow": "<h1>Nantes</h1><p><img src='https://d1gofzrmx0fcbg.cloudfront.net/production/cities/city_pictures/000/000/012/thumbnail/nantes.jpg?1453388206' height='200'></p>"
+              "lat": 45.4642035,
+              "lng": 9.189982,
+              "infowindow": "<h1>Milan</h1><p><img src='https://res.cloudinary.com/wagon/image/upload/c_fill,h_200/v1503357186/opwavixs0eubu350uljs.jpg' height='200'></p>"
+            },
+            {
+              "lat": 45.5261702,
+              "lng": -73.5950124,
+              "infowindow": "<h1>Montréal</h1><p><img src='https://res.cloudinary.com/wagon/image/upload/c_fill,h_200/v1486637954/vt6moyjrrczc2a2kyfor.jpg' height='200'></p>"
+            },
+            {
+              "lat": 47.212176,
+              "lng": -1.550849,
+              "infowindow": "<h1>Nantes</h1><p><img src='https://res.cloudinary.com/wagon/image/upload/c_fill,h_200/v1486637930/yajvlnqcgkrkwzvfy9pj.jpg' height='200'></p>"
             },
             {
               "lat": 48.8648482,
               "lng": 2.3798534,
-              "infowindow": "<h1>Paris</h1><p><img src='https://d1gofzrmx0fcbg.cloudfront.net/production/cities/city_pictures/000/000/001/thumbnail/15079403417_371f698d27_k.jpg?1445521241' height='200'></p>"
+              "infowindow": "<h1>Paris</h1><p><img src='https://res.cloudinary.com/wagon/image/upload/c_fill,h_200/v1489157232/r4nmh1cr1gpeqhipkgbq.jpg' height='200'></p>"
             },
             {
               "lat": -22.97754,
               "lng": -43.234288,
-              "infowindow": "<h1>Rio de Janeiro</h1><p><img src='https://d1gofzrmx0fcbg.cloudfront.net/production/cities/city_pictures/000/000/019/thumbnail/rio_1.jpg?1469439835' height='200'></p>"
+              "infowindow": "<h1>Rio de Janeiro</h1><p><img src='https://res.cloudinary.com/wagon/image/upload/c_fill,h_200/v1486637996/af6mqhjm7axfi88shabv.jpg' height='200'></p>"
             },
             {
-              "lat": -23.5591728,
-              "lng": -46.6801402,
-              "infowindow": "<h1>São Paulo</h1><p><img src='https://d1gofzrmx0fcbg.cloudfront.net/production/cities/city_pictures/000/000/015/thumbnail/12280389883_aecfecfc0e_h.jpg?1458582747' height='200'></p>"
+              "lat": -23.556073,
+              "lng": -46.692497,
+              "infowindow": "<h1>São Paulo</h1><p><img src='https://res.cloudinary.com/wagon/image/upload/c_fill,h_200/v1486638035/ttpyzggzcbdx0bjumo3t.jpg' height='200'></p>"
+            },
+            {
+              "lat": 31.21949,
+              "lng": 121.443571,
+              "infowindow": "<h1>Shanghai</h1><p><img src='https://res.cloudinary.com/wagon/image/upload/c_fill,h_200/v1486637913/jfffrkx88rrg7pfr6mgw.jpg' height='200'></p>"
+            },
+            {
+              "lat": 35.6339419,
+              "lng": 139.7081261,
+              "infowindow": "<h1>Tokyo</h1><p><img src='https://res.cloudinary.com/wagon/image/upload/c_fill,h_200/v1486638046/byfprj1oyqdtykgrlgms.jpg' height='200'></p>"
             }
-          ]);
-          handler.bounds.extendWith(markers);
-          handler.fitMapToBounds();
-        });
-      })
+          ]
+        );
+        handler.bounds.extendWith(markers);
+        handler.fitMapToBounds();
+      });
     </script>
   </body>
 </html>
@@ -132,7 +171,7 @@ City.order(:name).each do |city|
     markers << {
       lat: city.latitude,
       lng: city.longitude,
-      infowindow: "<h1>#{city.name}</h1><p><img src='#{city.city_picture.url(:thumbnail)}' height='200'></p>"
+      infowindow: "<h1>#{city.name}</h1><p><img src='https://res.cloudinary.com/wagon/image/upload/c_fill,h_200/#{city.city_background_picture.path}' height='200'></p>"
     }
   end
 end
